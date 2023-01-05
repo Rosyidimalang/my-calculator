@@ -19,17 +19,29 @@ function App() {
 
   const calculate = () => {
     try {
+      // console.log("result", result);
+      // console.log("eval(result)", eval(result));
+      // console.log("eval(result).toString()", eval(result).toString());
+      // eslint-disable-next-line
       setResult(eval(result).toString());
     } catch (error) {
-      setResult("Error");
+      alert("Error");
     }
+  };
+
+  const handleDelete = () => {
+    setResult(result.slice(0, -1));
+  };
+
+  const handleReload = () => {
+    window.location.reload();
   };
 
   return (
     <div className="">
       <div className="flex justify-center">
         <input
-          className="text-9xl font-bold bg-slate-500 w-[48rem] px-7 "
+          className="text-9xl font-bold bg-slate-500 w-full md:w-[48rem] px-7 "
           type="text"
           value={result}
           onChange={handleClick}
@@ -39,7 +51,7 @@ function App() {
       <div className=" flex md:flex justify-center">
         {btns1.map((btn, index) => (
           <button
-            className="border border-slate-100 w-1/4 md:w-48 h-20 bg-gray-900 text-white text-5xl"
+            className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
             onClick={() => handleClick(btn)}
             key={index}
           >
@@ -50,7 +62,7 @@ function App() {
       <div className="flex justify-center">
         {btns2.map((btn, index) => (
           <button
-            className="border border-slate-100 w-48 h-20 bg-gray-900 text-white text-5xl"
+            className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
             onClick={() => handleClick(btn)}
             key={index}
           >
@@ -61,7 +73,7 @@ function App() {
       <div className="flex justify-center">
         {btns3.map((btn, index) => (
           <button
-            className="border border-slate-100 w-48 h-20 bg-gray-900 text-white text-5xl"
+            className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
             onClick={() => handleClick(btn)}
             key={index}
           >
@@ -72,13 +84,29 @@ function App() {
       <div className="flex justify-center">
         {btns4.map((btn, index) => (
           <button
-            className="border border-slate-100 w-48 h-20 bg-gray-900 text-white text-5xl"
+            className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
             onClick={() => handleClick(btn)}
             key={index}
           >
             {btn === "/" ? "÷" : btn}
           </button>
         ))}
+      </div>
+      <div className="flex justify-center">
+        <button className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button>
+        <button
+          className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
+          onClick={handleDelete}
+        >
+          Del
+        </button>
+        <button
+          className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
+          onClick={handleReload}
+        >
+          Reload
+        </button>
+        <button className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button>
       </div>
     </div>
   );
