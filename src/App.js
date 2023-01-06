@@ -41,7 +41,7 @@ function App() {
     <div className="">
       <div className="flex justify-center">
         <input
-          className="text-9xl font-bold bg-slate-500 w-full md:w-[48rem] px-7 "
+          className="text-7xl md:text-9xl font-bold bg-slate-500 w-full md:w-[48rem] md:px-7 py-7 md:py-0 "
           type="text"
           value={result}
           onChange={handleClick}
@@ -92,7 +92,7 @@ function App() {
           </button>
         ))}
       </div>
-      <div className="flex justify-center">
+      <div className="grid grid-cols-4 md:flex justify-center">
         <button className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button>
         <button
           className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
@@ -101,12 +101,12 @@ function App() {
           Del
         </button>
         <button
-          className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
+          className="col-span-2 border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"
           onClick={handleReload}
         >
           Reload
         </button>
-        <button className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button>
+        {/* <button className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button> */}
       </div>
     </div>
   );
