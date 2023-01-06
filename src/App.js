@@ -106,7 +106,7 @@ function App() {
         >
           Reload
         </button>
-        {/* <button className="border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button> */}
+        <button className="hidden md:block border border-slate-100 w-full md:w-48 h-20 bg-gray-900 text-white text-5xl"></button>
       </div>
     </div>
   );
